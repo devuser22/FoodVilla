@@ -8,7 +8,7 @@ class Profile extends React.Component {
       userInfo: {
         name: "Dummy name",
         bio: "Dummy Location",
-        avatar_url: "<avatar_url>",
+        avatar_url: "<avatar_url >",
       },
     };
   }
