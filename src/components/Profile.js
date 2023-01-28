@@ -5,7 +5,7 @@ const Profile = (props) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      console.log("Inside Set Interval");
+      console.log("Inside Set Interval function");
     }, 1000);
 
     // clear the timer if navigated to another page - using the return function
