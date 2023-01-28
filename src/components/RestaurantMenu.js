@@ -14,8 +14,8 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <Shimmer />
   ) : (
-    <div className="menu">
-      <div className="menu-details">
+    <div className="flex flex-wrap justify-center">
+      <div className="">
         <h2> RestaurantMenu Id - {resId}</h2>
         <h2>{restaurant?.name}</h2>
         <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId}></img>

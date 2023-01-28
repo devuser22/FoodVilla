@@ -4,11 +4,11 @@ const RestaurantCard = (props) => {
   const { cloudinaryImageId, name, cuisines, locality } = props.restaurant.data;
   //getting the IMG_CDN_URL from constant file
   return (
-    <div className="card">
+    <div className="w-56 p-2 m-2 shadow-md bg-pink-50">
       <img src={IMG_CDN_URL + cloudinaryImageId}></img>
-      <h4>{name}</h4>
+      <h4 className="font-bold text-lg">{name}</h4>
       <p>{cuisines.join(", ")}</p>
-      <h4>Location : {locality}</h4>
+      <h4 className=" font-medium">Location : {locality}</h4>
     </div>
   );
 };
