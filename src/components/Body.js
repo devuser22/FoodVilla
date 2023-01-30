@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 
-const Body = () => {
+const Body = ({ user }) => {
   const [searchText, setSearchText] = useState();
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filterRestaurants, setFilterRestaurants] = useState([]);
@@ -74,6 +74,7 @@ const Body = () => {
                 <RestaurantCard
                   restaurant={restaurant}
                   key={restaurant.data.id}
+                  user={user}
                 />
               </Link>
             );

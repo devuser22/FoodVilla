@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import Footer from "./src/components/Footer";
@@ -10,6 +10,7 @@ import Contact from "./src/components/Contact";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import Profile from "./src/components/Profile";
 import Shimmer from "./src/components/Shimmer";
+import Login from "./src/components/Login";
 //import Instamart from "./src/components/Instamart";
 //const RestaurantCard = (props) => {
 const Instamart = lazy(() => import("./src/components/Instamart"));
@@ -41,7 +42,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Body />,
+        element: (
+          <Body
+            user={{
+              user: "Ajeet Verma",
+              email: "ajeet57@gmail.com",
+            }}
+          />
+        ),
       },
       {
         path: "/restaurant/:resId",
@@ -54,6 +62,10 @@ const router = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
