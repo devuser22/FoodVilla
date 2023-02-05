@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
-import UserContext from "./UserContext";
+import UserContext from "../utils/UserContext";
 
 const Body = () =>
   // { user }
