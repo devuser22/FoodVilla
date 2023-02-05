@@ -11,15 +11,29 @@ import RestaurantMenu from "./src/components/RestaurantMenu";
 import Profile from "./src/components/Profile";
 import Shimmer from "./src/components/Shimmer";
 import Login from "./src/components/Login";
+import UserContext from "./src/components/UserContext";
 //import Instamart from "./src/components/Instamart";
 //const RestaurantCard = (props) => {
 const Instamart = lazy(() => import("./src/components/Instamart"));
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "devuser",
+    email: "devuser@gmail.com",
+  });
+
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider
+        value={{
+          user: user,
+          setUser: setUser,
+        }}
+      >
+        <Header />
+
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </>
   );
 };
@@ -44,10 +58,10 @@ const router = createBrowserRouter([
         path: "/",
         element: (
           <Body
-            user={{
-              user: "Ajeet Verma",
-              email: "ajeet57@gmail.com",
-            }}
+          // user={{
+          //   user: "Ajeet Verma",
+          //   email: "ajeet57@gmail.com",
+          // }}
           />
         ),
       },
